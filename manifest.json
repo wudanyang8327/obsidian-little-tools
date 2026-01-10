@@ -1,11 +1,11 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "obsidian-little-tools",
+	"name": "Little Tools",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "一些常用小工具：空行占位、切换文档记住光标位置。",
+	"author": "wudanyang",
+	"authorUrl": "",
+	"fundingUrl": "",
 	"isDesktopOnly": false
 }
