@@ -1,7 +1,7 @@
 {
 	"id": "obsidian-little-tools",
 	"name": "Little Tools",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "0.15.0",
 	"description": "一些常用小工具：空行占位、切换文档记住光标位置。",
 	"author": "wudanyang",
