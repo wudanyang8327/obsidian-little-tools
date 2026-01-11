@@ -27,7 +27,7 @@ export class SettingTab extends PluginSettingTab {
 
 		new Setting(containerEl)
 			.setName('空行添加空格占位')
-			.setDesc('开启后可使用命令一键给空行写入单个空格。')
+			.setDesc('开启后可使用命令一键给空行写入占位符（防止阅读模式隐藏空行）。')
 			.addToggle(toggle =>
 				toggle
 					.setValue(this.plugin.settings.fillBlankLinesWithSpace)
@@ -38,7 +38,7 @@ export class SettingTab extends PluginSettingTab {
 			);
 
 		new Setting(containerEl)
-			.setName('表格前一行不添加空格')
+			.setName('表格前一行不添加占位符')
 			.setDesc('避免影响 Markdown 表格解析。')
 			.addToggle(toggle =>
 				toggle

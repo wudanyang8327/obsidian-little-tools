@@ -2,6 +2,7 @@ import { MarkdownView, Notice } from 'obsidian';
 import MyPlugin from '../main';
 
 const FENCE_RE = /^\s*(```|~~~)/;
+const PLACEHOLDER = '<span style="color:#000000;">&nbsp;</span>';
 
 function isTableSeparatorRow(line: string): boolean {
 	// Matches: | --- | :---: | ---: |
@@ -73,9 +74,9 @@ export function registerFillBlankLinesCommand(plugin: MyPlugin) {
 						continue;
 					}
 
-					// Normalize blank/whitespace-only line into a single space
-					if (line !== ' ') {
-						lines[i] = ' ';
+					// Normalize blank/whitespace-only line into placeholder
+					if (line !== PLACEHOLDER) {
+						lines[i] = PLACEHOLDER;
 						changed++;
 					}
 				}
