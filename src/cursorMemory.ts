@@ -1,5 +1,5 @@
 import { MarkdownView, WorkspaceLeaf } from 'obsidian';
-import MyPlugin from './main';
+import LittleToolsPlugin from './main';
 
 type CursorPos = { line: number; ch: number };
 
@@ -14,7 +14,7 @@ function getMarkdownView(leaf: WorkspaceLeaf | null): MarkdownView | null {
 	return view instanceof MarkdownView ? view : null;
 }
 
-export function registerCursorMemory(plugin: MyPlugin) {
+export function registerCursorMemory(plugin: LittleToolsPlugin) {
 	// In-memory only: avoids growing plugin data; enough to stop "always first line" during a session.
 	const cursorByPath = new Map<string, CursorPos>();
 	let lastActive: StoredCursor | null = null;

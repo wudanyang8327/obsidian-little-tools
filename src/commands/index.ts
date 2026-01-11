@@ -1,6 +1,6 @@
-import MyPlugin from '../main';
+import LittleToolsPlugin from '../main';
 import { registerFillBlankLinesCommand } from './fillBlankLines';
 
-export function registerCommands(plugin: MyPlugin) {
+export function registerCommands(plugin: LittleToolsPlugin) {
 	registerFillBlankLinesCommand(plugin);
 }

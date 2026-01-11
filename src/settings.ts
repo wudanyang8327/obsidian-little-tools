@@ -1,22 +1,22 @@
 import { App, PluginSettingTab, Setting } from 'obsidian';
-import MyPlugin from './main';
+import LittleToolsPlugin from './main';
 
-export interface MyPluginSettings {
+export interface LittleToolsSettings {
 	fillBlankLinesWithSpace: boolean;
 	skipSpaceBeforeTables: boolean;
 	rememberCursorOnSwitch: boolean;
 }
 
-export const DEFAULT_SETTINGS: MyPluginSettings = {
+export const DEFAULT_SETTINGS: LittleToolsSettings = {
 	fillBlankLinesWithSpace: true,
 	skipSpaceBeforeTables: true,
 	rememberCursorOnSwitch: true,
 };
 
-export class SettingTab extends PluginSettingTab {
-	plugin: MyPlugin;
+export class LittleToolsSettingTab extends PluginSettingTab {
+	plugin: LittleToolsPlugin;
 
-	constructor(app: App, plugin: MyPlugin) {
+	constructor(app: App, plugin: LittleToolsPlugin) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}

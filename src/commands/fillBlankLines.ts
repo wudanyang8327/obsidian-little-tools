@@ -1,5 +1,5 @@
 import { MarkdownView, Notice } from 'obsidian';
-import MyPlugin from '../main';
+import LittleToolsPlugin from '../main';
 
 const FENCE_RE = /^\s*(```|~~~)/;
 const PLACEHOLDER = '<span style="color:#000000;">&nbsp;</span>';
@@ -38,7 +38,7 @@ function shouldSkipPlaceholderBecauseNextIsTable(lines: string[], blankLineIndex
 	return isTableStartingAt(lines, nextLineIndex);
 }
 
-export function registerFillBlankLinesCommand(plugin: MyPlugin) {
+export function registerFillBlankLinesCommand(plugin: LittleToolsPlugin) {
 	plugin.addCommand({
 		id: 'fill-blank-lines-with-space',
 		name: '给空行添加空格占位（跳过表格前一行）',
