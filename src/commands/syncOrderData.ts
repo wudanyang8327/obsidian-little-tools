@@ -8,7 +8,7 @@ export function registerSyncOrderDataCommand(plugin: LittleToolsPlugin) {
 		name: '同步排序数据到 HTML 文件',
 		callback: async () => {
 			// 仅桌面端支持
-			if ((plugin.app as any).isMobile) {
+			if ('isMobile' in plugin.app && plugin.app.isMobile) {
 				new Notice('该命令仅支持桌面端 Obsidian');
 				return;
 			}
@@ -17,11 +17,11 @@ export function registerSyncOrderDataCommand(plugin: LittleToolsPlugin) {
 			let fs: typeof import('fs');
 			let path: typeof import('path');
 			try {
-				// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-var-requires
+				// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 				fs = window.require('fs');
-				// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-var-requires
+				// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 				path = window.require('path');
-			} catch (e) {
+			} catch {
 				new Notice('无法加载 Node.js 模块，无法执行。');
 				return;
 			}
@@ -56,7 +56,7 @@ export function registerSyncOrderDataCommand(plugin: LittleToolsPlugin) {
 
 				// 读取 data.json
 				const dataJsonContent = fs.readFileSync(dataJsonPath, 'utf-8');
-				const orderData = JSON.parse(dataJsonContent);
+				const orderData = JSON.parse(dataJsonContent) as Record<string, unknown>;
 
 				// 读取 HTML 文件
 				let htmlContent = fs.readFileSync(htmlFilePath, 'utf-8');
