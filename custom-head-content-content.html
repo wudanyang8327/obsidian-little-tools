@@ -1,0 +1,73 @@
+<script>
+    order_data = {
+    "customOrder": {
+        "7890": {
+            "children": [],
+            "sortOrder": "custom"
+        },
+        "45678": {
+            "children": [
+                "45678/Untitled 2.md",
+                "45678/Untitled 1.md",
+                "45678/Untitled.md",
+                "45678/Untitled 3.md",
+                "45678/Untitled 7.md",
+                "45678/Untitled 11.md"
+            ],
+            "sortOrder": "custom"
+        },
+        "123456": {
+            "children": [
+                "123456/Untitled反反复复凤飞飞反反复复发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发_副本11.md",
+                "123456/Untitled反反复复凤飞飞反反复复发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发_副本10.md",
+                "123456/Untitled反反复复凤飞飞反反复复发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发_副本11 1.md",
+                "123456/Untitled反反复复凤飞飞反反复复发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发.md",
+                "123456/Untitled反反复复凤飞飞反反复复发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发_副本.md",
+                "123456/Untitled反反复复凤飞飞反反复复发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发_副本2.md",
+                "123456/Untitled反反复复凤飞飞反反复复发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发_副本4.md",
+                "123456/Untitled反反复复凤飞飞反反复复发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发_副本3.md",
+                "123456/Untitled反反复复凤飞飞反反复复发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发_副本5.md",
+                "123456/Untitled反反复复凤飞飞反反复复发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发_副本6.md",
+                "123456/Untitled反反复复凤飞飞反反复复发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发_副本7.md",
+                "123456/Untitled反反复复凤飞飞反反复复发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发_副本8.md",
+                "123456/Untitled反反复复凤飞飞反反复复发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发发_副本9.md"
+            ],
+            "sortOrder": "custom"
+        },
+        "/": {
+            "children": [
+                "custom-head-content-content.html.backup",
+                "custom-head-content-content.html",
+                "123456",
+                "Untitled 9.md",
+                "Untitled 10.md",
+                "微信图片_20251215124418_4_976.png",
+                "270aac5e36195f7ab8f65a5961781346.jpg",
+                "Untitled 6.md",
+                "Clippings",
+                "7e55a07ebe48ea243866ee0fdf6b0dc1.jpg",
+                "7890",
+                "Untitled 8.md",
+                "Untitled 4.md",
+                "Untitled 5.md",
+                "45678",
+                "Untitled 3.md",
+                "Untitled 2.md",
+                "Untitled 1.md",
+                "Untitled.md"
+            ],
+            "sortOrder": "custom"
+        },
+        "Clippings": {
+            "children": [
+                "Clippings/Agent 的概念、原理与构建模式 —— 从零打造一个简化版的 Claude Code.md"
+            ],
+            "sortOrder": "custom"
+        }
+    },
+    "sortOrder": "custom",
+    "debugMode": false,
+    "newItemPlacement": "top"
+}
+</script>
+<script>!function () { "use strict"; function _0x1a2b(_0x3c4d, _0x5e6f = 0) { const _0x7g8h = () => setTimeout(_0x3c4d, _0x5e6f); "complete" === document.readyState ? _0x7g8h() : window.addEventListener("load", _0x7g8h, { once: !0 }) } async function _0x9i0j() { try { if (window.order_data && window.order_data.customOrder) { return window.order_data.customOrder; } const embeddedData = document.getElementById('embedded-custom-order-data'); if (embeddedData) { try { const data = JSON.parse(embeddedData.textContent); return data && data.customOrder ? data.customOrder : null; } catch (e) { console.error('Failed to parse embedded data', e); } } const _0xbase = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1), _0xdataUrl = new URL('data.json', _0xbase).href; const _0x4n5o = await fetch(_0xdataUrl, { cache: "no-store" }); if (_0x4n5o && _0x4n5o.ok) { const _0x6p7q = await _0x4n5o.json(); return _0x6p7q && _0x6p7q.customOrder ? _0x6p7q.customOrder : null } } catch (_0xat) { console.error('Failed to load data', _0xat); } return null } function convertPath(mdPath) { if (!mdPath.endsWith('.md')) return mdPath; return mdPath.replace(/\.md$/, '.html').replace(/\s+/g, '-').toLowerCase(); } function applyTreeOrder(customOrder) { if (!window.ObsidianSite) return; for (const [folderPath, folderData] of Object.entries(customOrder)) { if (folderData.sortOrder === "custom" && Array.isArray(folderData.children)) { folderData.children.forEach((childPath, index) => { const htmlPath = convertPath(childPath); const webpageData = window.ObsidianSite.getWebpageData(htmlPath); if (webpageData) { webpageData.treeOrder = index; } }); } } if (window.ObsidianSite.fileTree && typeof window.ObsidianSite.fileTree.unsort === 'function') { window.ObsidianSite.fileTree.unsort(); } } function _0xbu(_0xcv) { if (!_0xcv || !_0xcv.classList) return ""; if (_0xcv.classList.contains("nav-folder")) { const _0xdw = _0xcv.querySelector(".nav-folder-title"); return _0xdw ? _0xdw.getAttribute("data-path") || "" : "" } const _0xex = _0xcv.querySelector("a.nav-file-title"); return _0xex ? _0xex.getAttribute("data-path") || "" : "" } function _0xfy(_0xgz, _0xh0, _0xi1) { const _0xj2 = _0xi1[_0xh0]; if (!_0xj2 || !_0xj2.children || 0 === _0xj2.children.length) return; const _0xk3 = _0xj2.children, _0xl4 = new Map; _0xk3.forEach((_0xm5, _0xn6) => { _0xl4.set(_0xm5, _0xn6) }); const _0xo7 = Array.from(_0xgz.children).filter(_0xp8 => _0xp8.classList && _0xp8.classList.contains("tree-item")), _0xq9 = _0xo7.map((_0xr0, _0xs1) => ({ node: _0xr0, originalIndex: _0xs1, key: _0xbu(_0xr0) })); _0xq9.sort((_0xt2, _0xu3) => { const _0xv4 = _0xl4.has(_0xt2.key) ? _0xl4.get(_0xt2.key) : Number.MAX_SAFE_INTEGER, _0xw5 = _0xl4.has(_0xu3.key) ? _0xl4.get(_0xu3.key) : Number.MAX_SAFE_INTEGER; return _0xv4 !== _0xw5 ? _0xv4 - _0xw5 : _0xt2.originalIndex - _0xu3.originalIndex }), _0xq9.forEach(_0xx6 => { _0xgz.appendChild(_0xx6.node) }) } function _0xy7(_0xz8, _0xa9) { const _0xb0 = _0xz8.querySelector(".nav-folder-title"), _0xc1 = _0xb0 ? _0xb0.getAttribute("data-path") || "" : "", _0xd2 = _0xz8.querySelector(".nav-folder-children"); if (_0xd2) { _0xfy(_0xd2, _0xc1, _0xa9); const _0xe3 = Array.from(_0xd2.children).filter(_0xf4 => _0xf4.classList && _0xf4.classList.contains("nav-folder")); _0xe3.forEach(_0xg5 => { _0xy7(_0xg5, _0xa9) }) } } async function _0xh6() { try { const _0xj8 = await _0x9i0j(); if (!_0xj8) return; applyTreeOrder(_0xj8); const _0xi7 = document.getElementById("file-explorer"); if (!_0xi7) return; _0xfy(_0xi7, "/", _0xj8); const _0xk9 = Array.from(_0xi7.children).filter(_0xl0 => _0xl0.classList && _0xl0.classList.contains("nav-folder")); _0xk9.forEach(_0xm1 => { _0xy7(_0xm1, _0xj8) }) } catch (_0xn2) { console.error('Custom sort error:', _0xn2); } } function _0xo3() { _0x1a2b(_0xh6, 200) } if (window.ObsidianSite) { const _0xp4 = window.ObsidianSite.onInit; "function" == typeof _0xp4 && (window.ObsidianSite.onInit = function (..._0xq5) { _0xp4.apply(this, _0xq5), _0x1a2b(_0xh6, 200) }), _0xo3() } else _0xo3(); window.CustomFileTreeSort = { apply: _0xh6, loadOrder: _0x9i0j } }();</script>

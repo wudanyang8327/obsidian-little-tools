@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-little-tools",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Obsidian 小工具合集：空行占位、切换文档记住光标位置。",
 	"main": "main.js",
 	"type": "module",
